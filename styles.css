@@ -1,0 +1,131 @@
+/* General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff1f2;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #800020;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Navigation styling */
+nav {
+    background-color: #a83250;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd6df;
+}
+
+/* Main content */
+main {
+    padding: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    color: #800020;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Timetable */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    background-color: #800020;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid #e5b8c3;
+}
+
+/* Registration form */
+form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+fieldset {
+    border: 1px solid #e5b8c3;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+legend {
+    color: #800020;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #d9a3b1;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #a83250;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    background-color: #800020;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* Footer */
+footer {
+    background-color: #800020;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
