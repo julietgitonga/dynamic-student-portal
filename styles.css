@@ -23,7 +23,10 @@ header {
 nav {
     background-color: #a83250;
     padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 }
 
 nav a {
@@ -128,4 +131,17 @@ footer {
     text-align: center;
     padding: 15px;
     margin-top: 30px;
+}
+/* Homepage Grid Layout */
+.home-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 700px) {
+    .home-layout {
+        grid-template-columns: 1fr;
+    }
 }
