@@ -45,6 +45,8 @@ const registrationForm = document.querySelector("#registration-form");
 
 if (registrationForm) {
     registrationForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        
         const nameInput = document.getElementById("name");
         const emailInput = document.getElementById("email");
 
