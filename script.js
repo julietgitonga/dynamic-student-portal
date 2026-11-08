@@ -1,3 +1,17 @@
+// Student class
+class Student {
+    constructor(name, email, course, year) {
+        this.name = name;
+        this.email = email;
+        this.course = course;
+        this.year = year;
+    }
+
+    getSummary() {
+        return this.name + " - " + this.course + " (Year " + this.year + ")";
+    }
+}
+
 // Welcome message on the homepage
 if (document.querySelector(".home-layout")) {
     alert("Welcome to Kabarak University Student Portal!");
@@ -11,7 +25,6 @@ let studyYear = 1;
 console.log("Student Name: " + studentName);
 console.log("Year of Study: " + studyYear);
 
-// Check student's year of study
 if (studyYear === 1) {
     console.log("Welcome, first-year student!");
 } else {
@@ -23,17 +36,34 @@ for (let i = 1; i <= 5; i++) {
     console.log(i);
 }
 
+// Regular expressions
+const namePattern = /^[A-Za-z ]+$/;
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 // Registration form validation
-const registrationForm = document.querySelector("form");
+const registrationForm = document.querySelector("#registration-form");
 
 if (registrationForm) {
     registrationForm.addEventListener("submit", function(event) {
         const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
 
-        if (nameInput && nameInput.value.trim() === "") {
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+
+        if (!namePattern.test(name)) {
             event.preventDefault();
-            alert("Please enter your full name.");
+            alert("Please enter a valid name using letters and spaces only.");
+            return;
         }
+
+        if (!emailPattern.test(email)) {
+            event.preventDefault();
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        alert("Registration submitted successfully!");
     });
 }
 
@@ -44,11 +74,7 @@ function addStudentToPage(student) {
     if (!studentList) return;
 
     const listItem = document.createElement("li");
-
-    listItem.textContent =
-        student.name + " - " +
-        student.course + " (Year " +
-        student.year + ")";
+    listItem.textContent = student.getSummary();
 
     studentList.appendChild(listItem);
 }
@@ -82,7 +108,16 @@ function loadStudents() {
             return response.json();
         })
         .then(function(students) {
-            displayAllStudents(students);
+            const studentObjects = students.map(function(student) {
+                return new Student(
+                    student.name,
+                    student.email,
+                    student.course,
+                    student.year
+                );
+            });
+
+            displayAllStudents(studentObjects);
         })
         .catch(function(error) {
             console.error("Error loading students:", error);

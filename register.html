@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Student Registration - Kabarak University</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,7 +14,7 @@
 
     <header>
         <h1>Kabarak University</h1>
-        <p>Dynamic Student Portal</p>
+        <p>Student Registration Form</p>
     </header>
 
     <nav>
@@ -24,11 +25,9 @@
 
     <main>
 
-        <h2>Student Registration Form</h2>
+        <h2>Student Registration</h2>
 
-        <p>Please fill in your details below.</p>
-
-        <form action="#" method="get" novalidate>
+        <form id="registration-form" action="#" method="get" novalidate>
 
             <fieldset>
                 <legend>Personal Information</legend>
@@ -36,83 +35,59 @@
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
 
-                <br><br>
-
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" required>
-
-                <br><br>
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
 
-                <br><br>
-
                 <label for="age">Age:</label>
-                <input type="number" id="age" name="age" min="16" max="100">
-
-                <br><br>
-
-                <p>Gender:</p>
-
-                <input type="radio" id="male" name="gender" value="Male">
-                <label for="male">Male</label>
-
-                <input type="radio" id="female" name="gender" value="Female">
-                <label for="female">Female</label>
+                <input type="number" id="age" name="age">
 
             </fieldset>
-
-            <br>
 
             <fieldset>
                 <legend>Academic Information</legend>
 
-                <label for="course">Select Course:</label>
-
+                <label for="course">Course:</label>
                 <select id="course" name="course">
-                    <option value="">--Choose a Course--</option>
-                    <option value="Data Science and Analytics">Data Science and Analytics</option>
-                    <option value="Computer Science">Computer Science</option>
-                    <option value="Business Administration">Business Administration</option>
-                    <option value="Information Technology">Information Technology</option>
+                    <option value="">Select Course</option>
+                    <option value="Data Science and Analytics">
+                        Data Science and Analytics
+                    </option>
+                    <option value="Business Administration">
+                        Business Administration
+                    </option>
+                    <option value="Computer Science">
+                        Computer Science
+                    </option>
+                    <option value="Information Technology">
+                        Information Technology
+                    </option>
                 </select>
 
-                <br><br>
-
                 <label for="year">Year of Study:</label>
-
                 <select id="year" name="year">
-                    <option value="">--Select Year--</option>
-                    <option value="Year 1">Year 1</option>
-                    <option value="Year 2">Year 2</option>
-                    <option value="Year 3">Year 3</option>
-                    <option value="Year 4">Year 4</option>
+                    <option value="1">Year 1</option>
+                    <option value="2">Year 2</option>
+                    <option value="3">Year 3</option>
+                    <option value="4">Year 4</option>
                 </select>
 
             </fieldset>
-
-            <br>
-
+            
             <fieldset>
                 <legend>Additional Information</legend>
 
-                <label for="comments">Additional Comments:</label>
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments"></textarea>
 
-                <br><br>
-
-                <textarea id="comments" name="comments"
-                    rows="5" cols="40"
-                    placeholder="Enter any additional information here..."></textarea>
-
-                <br><br>
-
-                <input type="checkbox" id="declaration" name="declaration">
-                <label for="declaration">I confirm that the information provided is correct.</label>
+                <label>
+                    <input type="checkbox" name="declaration" required>
+                    I confirm that the information provided is correct.
+                </label>
 
             </fieldset>
-
-            <br>
 
             <button type="submit">Register</button>
             <button type="reset">Clear Form</button>
@@ -122,9 +97,11 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Kabarak University Dynamic Student Portal.</p>
+        <p>&copy; 2026 Kabarak University. All rights reserved.</p>
     </footer>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>

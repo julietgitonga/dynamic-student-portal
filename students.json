@@ -1,26 +1,31 @@
 [
     {
         "name": "Juliet Gitonga",
+        "email": "juliet.gitonga@kabarak.ac.ke",
         "course": "Data Science and Analytics",
         "year": 1
     },
     {
         "name": "Mary Wanjiku",
+        "email": "mary.wanjiku@kabarak.ac.ke",
         "course": "Business Administration",
         "year": 1
     },
     {
         "name": "John Kamau",
+        "email": "john.kamau@kabarak.ac.ke",
         "course": "Computer Science",
         "year": 2
     },
     {
         "name": "Peter Mwangi",
+        "email": "peter.mwangi@kabarak.ac.ke",
         "course": "Information Technology",
         "year": 2
     },
     {
         "name": "Grace Achieng",
+        "email": "grace.achieng@kabarak.ac.ke",
         "course": "Data Science and Analytics",
         "year": 1
     }
