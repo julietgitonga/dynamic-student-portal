@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Juliet Gitonga",
+        "course": "Data Science and Analytics",
+        "year": 1
+    },
+    {
+        "name": "Mary Wanjiku",
+        "course": "Business Administration",
+        "year": 1
+    },
+    {
+        "name": "John Kamau",
+        "course": "Computer Science",
+        "year": 2
+    },
+    {
+        "name": "Peter Mwangi",
+        "course": "Information Technology",
+        "year": 2
+    },
+    {
+        "name": "Grace Achieng",
+        "course": "Data Science and Analytics",
+        "year": 1
+    }
+]

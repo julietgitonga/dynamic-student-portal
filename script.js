@@ -1,7 +1,6 @@
 // Welcome message on the homepage
 if (document.querySelector(".home-layout")) {
     alert("Welcome to Kabarak University Student Portal!");
-
     console.log("Student Portal is running successfully.");
 }
 
@@ -38,24 +37,18 @@ if (registrationForm) {
     });
 }
 
-// Array of student names
-const students = [
-    "Juliet Gitonga",
-    "Mary Wanjiku",
-    "John Kamau",
-    "Peter Mwangi",
-    "Grace Achieng"
-];
-
 // Function to add a student to the page
-function addStudentToPage(name) {
+function addStudentToPage(student) {
     const studentList = document.getElementById("student-list");
 
     if (!studentList) return;
 
     const listItem = document.createElement("li");
 
-    listItem.textContent = name;
+    listItem.textContent =
+        student.name + " - " +
+        student.course + " (Year " +
+        student.year + ")";
 
     studentList.appendChild(listItem);
 }
@@ -63,25 +56,55 @@ function addStudentToPage(name) {
 // Function to display all students
 function displayAllStudents(students) {
     const studentList = document.getElementById("student-list");
+    const studentCount = document.getElementById("student-count");
 
     if (!studentList) return;
 
-    // Clear the previous list
     studentList.innerHTML = "";
 
-    // Display each student
+    if (studentCount) {
+        studentCount.textContent = students.length;
+    }
+
     for (let i = 0; i < students.length; i++) {
         addStudentToPage(students[i]);
     }
 }
 
-// Button click event
+// Fetch student data from students.json
+function loadStudents() {
+    fetch("students.json")
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error("Could not load student data.");
+            }
+
+            return response.json();
+        })
+        .then(function(students) {
+            displayAllStudents(students);
+        })
+        .catch(function(error) {
+            console.error("Error loading students:", error);
+
+            const studentList = document.getElementById("student-list");
+
+            if (studentList) {
+                studentList.innerHTML =
+                    "<li>Unable to load student information. Please try again.</li>";
+            }
+
+            const studentCount = document.getElementById("student-count");
+
+            if (studentCount) {
+                studentCount.textContent = "0";
+            }
+        });
+}
+
+// Show students when the button is clicked
 const showStudentsButton = document.getElementById("show-students");
 
-console.log("Show Students Button:", showStudentsButton);
-
 if (showStudentsButton) {
-    showStudentsButton.addEventListener("click", function() {
-        displayAllStudents(students);
-    });
+    showStudentsButton.addEventListener("click", loadStudents);
 }
