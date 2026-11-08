@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Kabarak University - Student Portal</title>
+
     <link rel="stylesheet" href="styles.css">
+
     <style>
         h2 {
-            color:blue;
+            color: blue;
         }
     </style>
 </head>
@@ -51,24 +53,33 @@
             <h3>Our Campus</h3>
             <img src="images/campus.jpeg"
                  alt="View of Kabarak University campus"
-                 width="350"
-                 height="auto">
+                 width="350">
 
             <h3>Administration Block</h3>
             <img src="images/admin.jpeg"
                  alt="Kabarak University administration block"
-                 width="350"
-                 height="auto">
+                 width="350">
 
             <h3>University Library</h3>
             <img src="images/library.jpeg"
                  alt="Kabarak University library"
-                 width="350"
-                 height="auto">
-
+                 width="350">
         </section>
 
     </main>
+
+    <!-- Registered Students Section -->
+    <section>
+        <h2>Registered Students</h2>
+
+        <p>Click the button below to view registered students.</p>
+
+        <button id="show-students" type="button">
+            Show Registered Students
+        </button>
+
+        <ul id="student-list"></ul>
+    </section>
 
     <!-- Footer Section -->
     <footer>
@@ -78,7 +89,8 @@
             All rights reserved.
         </p>
     </footer>
-<script src="script.js"></script>
-</body>
 
+    <script src="script.js"></script>
+
+</body>
 </html>
